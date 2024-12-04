@@ -16,7 +16,8 @@ import br.edu.utfpr.bankapi.validations.AvailableBalanceValidation;
 import jakarta.transaction.Transactional;
 
 @Service
-public class TransactionService {
+public class TransactionService{
+
     @Autowired
     private TransactionRepository transactionRepository;
 
@@ -25,6 +26,7 @@ public class TransactionService {
 
     @Autowired
     private AvailableAccountValidation availableAccountValidation;
+
 
     @Transactional
     public Transaction transfer(TransferDTO dto) throws NotFoundException {
@@ -118,5 +120,20 @@ public class TransactionService {
 
         // Salvando a transação
         return transactionRepository.save(transaction);
+    }
+
+    public void withdraw(double initialBalance, double amountToWithdraw) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'withdraw'");
+    }
+
+    public void transfer(double initialBalance, double amountToTransfer) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'transfer'");
+    }
+
+    public double getBalance() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getBalance'");
     }
 }
